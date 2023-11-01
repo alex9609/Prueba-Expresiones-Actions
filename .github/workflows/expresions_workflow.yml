@@ -13,3 +13,10 @@ jobs:
             elif [[ $(git diff --name-only HEAD~1) == "reporte2.txt" ]]; then
             echo "El archivo file2 fue modificado."
             fi
+
+      - name: Evaluando con for
+        run: |
+            files=$(git diff --name-only HEAD~1 | jq -r '.[]')
+            for file in $files; do
+                echo "El archivo $file fue modificado."
+            done
