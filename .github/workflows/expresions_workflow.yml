@@ -60,6 +60,10 @@ jobs:
       - name: Action head red
         run: |
             echo ${{github.head_ref}}
+
+      - name: Git diff
+        run : |
+            git diff --name-only HEAD~1
       
             
 
