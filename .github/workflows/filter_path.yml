@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: Using Dorny paths Filter
 on: 
     push:
         paths:
@@ -20,6 +20,8 @@ jobs:
               - 'reportes/reporte2.txt'
             reporte3:
               - 'reportes/reporte3.txt'
+            reporte3:
+              - 'reportes/reporte3.txt'
       
         # run only if some file in 'src' folder was changed
       - if: steps.filter.outputs.reporte1 == 'true'
@@ -31,5 +33,9 @@ jobs:
       - if: steps.filter.outputs.reporte3 == 'true'
         run: |
             echo "Reporte 3 modificado"
+
+      - if: steps.filter.outputs.reporte4 == 'true'
+        run: |
+            echo "Reporte 4 modificado
 
 
