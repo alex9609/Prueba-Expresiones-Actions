@@ -19,6 +19,10 @@ jobs:
             #echo "El archivo file2 fue modificado."
             #fi
 
-      - name: Nombre de archivo git log
+      - name: Nombre de commit git log
         run: |
             git log -1 --pretty=format:"%s"
+      - name: Nombre de commit git log
+        run: |
+            git log -1 --name-only --pretty=format:"%s"
+    
