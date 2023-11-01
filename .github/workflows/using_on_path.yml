@@ -1,9 +1,6 @@
 name: Git log -1 --pretty
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: 
-    push:
-        paths:
-          - "reportes/**"
+on: workflow_call
 
 
 jobs:

@@ -36,6 +36,4 @@ jobs:
 
       - if: steps.filter.outputs.reporte4 == 'true'
         run: |
-            echo "Reporte 4 modificado
-
-
+            echo "Reporte 4 modificado"
