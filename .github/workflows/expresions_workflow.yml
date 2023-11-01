@@ -16,6 +16,7 @@ jobs:
 
       - name: Evaluando con for
         run: |
+            echo git diff --name-only HEAD~1 | jq -r '.[]
             files=$(git diff --name-only HEAD~1 | jq -r '.[]')
             for file in $files; do
                 echo "El archivo $file fue modificado."
