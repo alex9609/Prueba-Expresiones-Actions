@@ -20,8 +20,8 @@ jobs:
               - 'reportes/reporte2.txt'
             reporte3:
               - 'reportes/reporte3.txt'
-            reporte3:
-              - 'reportes/reporte3.txt'
+            reporte4:
+              - 'reportes/reporte4.txt'
       
         # run only if some file in 'src' folder was changed
       - if: steps.filter.outputs.reporte1 == 'true'
