@@ -6,18 +6,64 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Diferencias
-        run: |
-            if [[ $(git diff --name-only HEAD~1) == "reporte1.txt" ]]; then
-            echo "El archivo file1 fue modificado."
-            elif [[ $(git diff --name-only HEAD~1) == "reporte2.txt" ]]; then
-            echo "El archivo file2 fue modificado."
-            fi
+      #- name: Diferencias
+        #run: |
+            #if [[ $(git diff --name-only HEAD~1) == "reporte1.txt" ]]; then
+            #echo "El archivo file1 fue modificado."
+            #elif [[ $(git diff --name-only HEAD~1) == "reporte2.txt" ]]; then
+            #echo "El archivo file2 fue modificado."
+            #fi
 
-      - name: Evaluando con for
+      - name: Action path
         run: |
-            echo ${{github.event}}
-            files=$(git diff --name-only HEAD~1 | jq -r '.[]')
-            for file in $files; do
-                echo "El archivo $file fue modificado."
-            done
+            echo ${{github.action_path}}
+      - name: Action ref
+        run: |
+            echo ${{github.action_ref}}
+      
+      - name: Action repository
+        run: |
+            echo ${{github.action_repository}}
+      
+      - name: Action event path
+        run: |
+            echo ${{github.event_path}}  
+      
+      - name: Action  event name
+        run: |
+            echo ${{github.event_name}}  
+      
+      - name: Action Path
+        run: |
+            echo ${{github.path}}  
+      
+      - name: Action ref
+        run: |
+            echo ${{github.ref}}  
+      
+      - name: Action ref_name
+        run: |
+            echo ${{github.ref_name}}  
+      
+      - name: Action sha
+        run: |
+            echo ${{github.sha}}
+      
+      - name: Action workflow
+        run: |
+            echo ${{github.workflow}}
+      
+      - name: Action workflow ref
+        run: |
+            echo ${{github.workflow_ref}}
+      
+      - name: Action head red
+        run: |
+            echo ${{github.head_ref}}
+      
+            
+
+    #files=$(git diff --name-only HEAD~1 | jq -r '.[]')
+    #for file in $files; do
+    #    echo "El archivo $file fue modificado."
+    #done
