@@ -16,10 +16,20 @@ jobs:
           filters: |
             reporte1:
               - 'reportes/reporte1.txt'
+            reporte2:
+              - 'reportes/reporte2.txt'
+            reporte3:
+              - 'reportes/reporte3.txt'
       
         # run only if some file in 'src' folder was changed
       - if: steps.filter.outputs.reporte1 == 'true'
         run: |
             echo "Reporte 1 modificado"
+      - if: steps.filter.outputs.reporte2 == 'true'
+        run: |
+            echo "Reporte 2 modificado"
+      - if: steps.filter.outputs.reporte3 == 'true'
+        run: |
+            echo "Reporte 3 modificado"
 
 
