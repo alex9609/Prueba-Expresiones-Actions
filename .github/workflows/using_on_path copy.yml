@@ -2,21 +2,22 @@ name: learn-github-actions
 on: 
     push:
         paths:
-          - "reportes/reporte1.txt"
-          - "reportes/reporte2.txt"
-          - "reportes/reporte3.txt"
+          - "reportes/**"
 
 jobs:
   deployReport1:
     runs-on: ubuntu-latest
     steps:
-      - name: Nombre de commit git log
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            reporte1:
+              - 'reportes/reporte1.txt'
+      
+        # run only if some file in 'src' folder was changed
+      - if: steps.filter.outputs.reporte1 == 'true'
         run: |
-            echo desplegando reporte1
-
-      - name: Nombre de path de ejecución
-        run: |
-            echo ${{github.event_name}} 
-
+            echo "Reporte 1 modificado"
 
 
