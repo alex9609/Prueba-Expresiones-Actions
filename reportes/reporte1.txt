@@ -1,3 +1,2 @@
 Generando reporte 1 primera iteracion
-- Prueba 1
 - Prueba changed files
