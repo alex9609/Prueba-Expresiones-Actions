@@ -1,8 +1,8 @@
 name: Using Dorny paths Filter
-on: 
-    push:
-        paths:
-          - "reportes/**"
+on: workflow_call
+    #push:
+        #paths:
+          #- "reportes/**"
 
 jobs:
   deployReport1:
